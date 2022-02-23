@@ -29,7 +29,7 @@ public class EventService {
     public void initLogReading () throws IOException {
         BufferedReader bufferedReader = new BufferedReader(
                 new InputStreamReader(System.in));
-        System.out.println("Insert the path to the logfile: ");
+        System.out.println("Insert the absolute path to the logfile (include the file name and extension): ");
         String path = bufferedReader.readLine();
         measureEventsDuration(parseLogFile(path));
     }
