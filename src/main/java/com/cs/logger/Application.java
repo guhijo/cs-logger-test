@@ -23,8 +23,8 @@ public class Application {
         private EventService eventService;
 
         @Override
-        public void run(String...args) throws Exception {
-            eventService.initLogReading();
+        public void run(String...args){
+            eventService.initLogReading(args[0]);
         }
     }
 }

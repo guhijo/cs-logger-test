@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,11 +25,7 @@ public class EventService {
         this.eventRepository = eventRepository;
     }
 
-    public void initLogReading () throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(
-                new InputStreamReader(System.in));
-        System.out.println("Insert the absolute path to the logfile (include the file name and extension): ");
-        String path = bufferedReader.readLine();
+    public void initLogReading (String path){
         measureEventsDuration(parseLogFile(path));
     }
 

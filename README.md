@@ -32,4 +32,4 @@ Open a command prompt and type the following
 
 cd <PROJECT-HOME-FOLDER>
 
-mvn spring-boot:run
+mvn spring-boot:run -Dspring-boot.run.arguments=<Absolute path to logfile.txt>
