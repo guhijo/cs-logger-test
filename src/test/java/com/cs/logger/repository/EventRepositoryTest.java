@@ -1,7 +1,6 @@
 package com.cs.logger.repository;
 
 import com.cs.logger.domain.Event;
-import com.cs.logger.domain.Status;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Optional;
 
+import static com.cs.logger.domain.Status.FINISHED;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @RunWith(SpringRunner.class)
@@ -24,7 +24,7 @@ public class EventRepositoryTest {
         Event event = new Event();
         event.setId("abcd");
         event.setTimeStamp(1L);
-        event.setState(Status.FINISHED);
+        event.setState(FINISHED);
         event.setDuration(4);
         event.setType("4");
         event.setHost("4");

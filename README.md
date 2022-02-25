@@ -26,7 +26,7 @@ cd <HSQL-HOME-FOLDER>\hsqldb\data
 java -cp ../lib/hsqldb.jar org.hsqldb.server.Server --database.0 test
 
 
-##Then Launch the application:
+##Then launch the application:
 
 Open a command prompt and type the following
 

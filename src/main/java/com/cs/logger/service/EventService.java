@@ -19,6 +19,7 @@ import java.util.List;
 public class EventService {
 
     private final EventRepository eventRepository;
+    private final static int EXPECTED_THRESHOLD = 4;
 
     @Autowired
     public EventService(EventRepository eventRepository) {
@@ -42,7 +43,7 @@ public class EventService {
             reader.close();
         } catch (IOException e) {
             e.getMessage();
-            log.error(e.toString());
+            log.error("Unable to read provided file.", e);
         }
         return eventList;
     }
@@ -56,7 +57,7 @@ public class EventService {
                     if(subItem.getId().equalsIgnoreCase(logId) && subItem.getState() == Status.FINISHED){
                         duration = subItem.getTimeStamp() - item.getTimeStamp();
                         subItem.setDuration(duration);
-                        subItem.setAlert(duration > 4 ? true : false);
+                        subItem.setAlert(duration > EXPECTED_THRESHOLD ? true : false);
                         this.save(subItem);
                     }
                 }
